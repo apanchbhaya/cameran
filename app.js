@@ -29,38 +29,23 @@ cameraTrigger.onclick = function() {
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
 
+
+
+
 //when the square us tapped an loading screen image appears
 take_photo_btn.addEventListener("click", function(e){
 
-  e.preventDefault();
 
-  var snap = takeSnapshot();
+
 
   // Show image. 
   image.setAttribute('src', snap);
   image.classList.add("visible");
 
-  // Enable delete and save buttons
-  delete_photo_btn.classList.remove("disabled");
-  download_photo_btn.classList.remove("disabled");
-
-  // Set the href attribute of the download button to the snap url.
-  download_photo_btn.href = snap;
-   video.pause();
 
 });
 
-  delete_photo_btn.addEventListener("click", function(e){
 
-  e.preventDefault();
-
-  delete_photo_btn.classList.add("disabled");
-  download_photo_btn.classList.add("disabled");
-
-  // Resume playback of stream.
-  video.play();
-
-});
 
 
 
